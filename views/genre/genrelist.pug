@@ -1,0 +1,13 @@
+extends ./../layout
+
+block content
+  h1= title
+  
+  ul
+    - items.sort(function(a, b) {let textA = a.name.toUpperCase(); let textB = b.name.toUpperCase(); return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;});
+    each item in items
+      li 
+        a(href=`/genres/` + item.id) #{item.name}
+
+    else
+      li There are no genre available.

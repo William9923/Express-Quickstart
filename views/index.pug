@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #[em Strict Libary], a very basic Express-Typescript website developed as a tutorial example on the Mozilla Developer Network.
+
+  h1 Dynamic list of Books & Genres
+
+  if error
+    p !{error.message}
+  else
+    p The library has the following record counts:
+
+    ul
+
+      li #[strong Books:] #{data.bookCount}
+      li #[strong Genres:] #{data.genreCount}

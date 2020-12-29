@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "target": "es6",
+    "noImplicitAny": false,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "node_modules/*"
+      ]
+    },
+    "lib": [
+      "es5",
+      "es6",
+      "dom",
+      "dom.iterable"
+    ],
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

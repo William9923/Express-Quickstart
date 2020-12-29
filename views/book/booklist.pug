@@ -1,0 +1,20 @@
+extends ./../layout
+
+block content
+  h1= title 
+  
+  ul
+    - items.sort(function(a, b) {let textA = a.title.toUpperCase(); let textB = b.title.toUpperCase(); return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;});
+    each item in items
+      li 
+        a(href="/books/" + item.id) #{item.title} 
+        |
+        br 
+        span.b="Genre : "
+        each genre in item.genres 
+          span= genre.name + (item.genres.findIndex(elem=>elem.name===genre.name) === item.genres.length - 2 ? ' | ' : '')
+        else 
+          span= "-"
+
+    else
+      li There are no books.

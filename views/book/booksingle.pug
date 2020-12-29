@@ -1,0 +1,12 @@
+extends ./../layout
+
+block content
+  h1 Title: #{book.title}
+  
+  p #[strong Summary:] #{book.summary}
+  p #[strong ISBN:] #{book.isbn}
+  p #[strong Genre:]&nbsp;
+    each val, index in book.genres
+      a(href="/genres/" + val.id) #{val.name}
+      if index < book.genres.length - 1
+        |, 
