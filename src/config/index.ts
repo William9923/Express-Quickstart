@@ -4,11 +4,14 @@ import { dir } from "./directory";
 
 process.env.NODE_ENV = !!process.env.NODE_ENV ? process.env.NODE_ENV : "development";
 
-const envFound: dotenv.DotenvConfigOutput = dotenv.config();
+if (process.env.NODE_ENV !== "production") {
+    const envFound: dotenv.DotenvConfigOutput = dotenv.config();
 
-if (envFound.error) {
-    throw new Error("⚠️  Couldn't find .env file  ⚠️");
+    if (envFound.error) {
+        throw new Error("⚠️  Couldn't find .env file  ⚠️");
+    }
 }
+
 
 export const config = {
     dir: dir,
@@ -18,7 +21,8 @@ export const config = {
     },
     api: {
         prefix: !!process.env.API_PREFIX ? process.env.API_PREFIX : "/api"
-    }
+    },
+    databaseURL: process.env.MONGO_URL! 
 };
 
 

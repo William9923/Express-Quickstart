@@ -2,5 +2,5 @@
     "watch": ["src", "views"],
     "ext": "ts,json",
     "ignore": ["src/**/*.spec.ts"],
-    "exec": "npm run compile && node dist/server.js"     
+    "exec": "npm run build && node dist/server.js"     
 }

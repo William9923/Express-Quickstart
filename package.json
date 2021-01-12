@@ -7,11 +7,11 @@
   "license": "ISC",
   "scripts": {
     "build": "rm -rf dist && npm run build-ts && npm run lint && npm run copy-static-assets",
-    "compile": "tsc && npm run copy-static-assets",
+    "compile": "npm run build-ts && npm run copy-static-assets",
     "build-ts": "tsc",
     "copy-static-assets": "ts-node copyStaticAssets.ts",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
-    "start": "node dist/server.js",
+    "start": "npm run build && node dist/server.js",
     "dev": "nodemon .",
     "clean": "rm -rf node_modules && rm -rf dist",
     "test": "jest --forceExit --coverage --verbose"
@@ -58,6 +58,7 @@
     "@types/request-promise": "^4.1.44",
     "@types/shelljs": "^0.8.8",
     "@types/supertest": "^2.0.8",
+    "@types/validator": "^13.1.3",
     "@types/winston": "^2.4.4",
     "@typescript-eslint/eslint-plugin": "^2.3.1",
     "@typescript-eslint/parser": "^2.3.1",
