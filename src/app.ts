@@ -1,10 +1,8 @@
 import express, { Request, Response, NextFunction } from "express";
 import bodyParser from "body-parser";
-import flash from "express-flash";
 import path from "path";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import mongoose from "mongoose";
 
 import HomeRoute from "./routes";
 import BookRoute from "./routes/Book";
@@ -19,13 +17,14 @@ import errorHandler from "./middlewares/error";
 import LOG from "./shared/logger";
 import HttpError from "./errors/HttpError";
 import { config } from "./config";
+import connect from "./shared/connect";
 
 const app = express();
 
 /**
  * Database Configuration
  */
-
+connect();
 
 /**
  * Express config

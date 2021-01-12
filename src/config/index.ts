@@ -21,7 +21,8 @@ export const config = {
     },
     api: {
         prefix: !!process.env.API_PREFIX ? process.env.API_PREFIX : "/api"
-    }
+    },
+    databaseURL: process.env.MONGO_URL! 
 };
 
 
