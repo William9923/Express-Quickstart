@@ -3,7 +3,7 @@
 The main purpose of this repository is to show a working Express.js API Server + front-end project and workflow for writing Node code in TypeScript.
 This is the example repository from the MDN tutorial about express js [click here](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Tutorial_local_library_website)
 
-__Live Demo:__ 
+__Live Demo:__ https://typescript-express-demo.herokuapp.com/
 
 ## Overview
 The following application template follows Uncle Bob [Clean Architecture](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html) principles and project structure.
@@ -101,4 +101,7 @@ This project cannot be created without the help from these repo:
 - [Express Guide MDN](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Tutorial_local_library_website)
 - [Microsoft Typescript Template](https://basarat.gitbook.io/typescript/)
 - [Typescript Book Guide](https://basarat.gitbook.io/typescript/)
+
+## TODO
+- [ ] Sequelize integration 
 
