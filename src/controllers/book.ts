@@ -1,11 +1,12 @@
 import { NextFunction, Request, Response } from "express";
+import { MongoBookDAO } from "../daos/Book/MongoBookDAO";
 import { IBookDao } from "../daos/book";
 import { MockBookDAO } from "../daos/mock/MockDAO.mock";
 import HttpError from "../errors/HttpError";
 
 class BookController {
 
-    private BookDAO: IBookDao = new MockBookDAO();
+    private BookDAO: IBookDao = new MongoBookDAO();
 
     async getOne(req: Request, res: Response, next: NextFunction): Promise<void> {
         const book = await this.BookDAO.getOne(req.params.id);

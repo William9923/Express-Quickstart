@@ -9,12 +9,14 @@ import JSONHttpError from "../../errors/JSONHttpError";
 
 
 import { generate } from "../../shared/util";
+import { MongoBookDAO } from "../../daos/Book/MongoBookDAO";
+import { MongoGenreDAO } from "../../daos/Genre/MongoGenreDAO";
 
 
 class GenreApiController {
 
-    private BookDAO: IBookDao = new MockBookDAO();
-    private GenreDAO: IGenreDao = new MockGenreDAO();
+    private BookDAO: IBookDao = new MongoBookDAO();
+    private GenreDAO: IGenreDao = new MongoGenreDAO();
 
     async getOne(req: Request, res: Response, next: NextFunction): Promise<void> {
         const [genre, books] = await Promise.all(

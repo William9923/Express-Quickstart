@@ -6,12 +6,14 @@ import { IBookDao } from "../daos/book";
 import { IGenreDao } from "../daos/genre";
 import { MockBookDAO, MockGenreDAO } from "../daos/mock/MockDAO.mock";
 import HttpError from "../errors/HttpError";
+import { MongoBookDAO } from "../daos/Book/MongoBookDAO";
+import { MongoGenreDAO } from "../daos/Genre/MongoGenreDAO";
 
 
 class GenreController {
 
-    private BookDAO: IBookDao = new MockBookDAO();
-    private GenreDAO: IGenreDao = new MockGenreDAO();
+    private BookDAO: IBookDao = new MongoBookDAO();
+    private GenreDAO: IGenreDao = new MongoGenreDAO();
 
     async getOne(req: Request, res: Response, next: NextFunction): Promise<void> {
 
