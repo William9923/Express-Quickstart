@@ -7,11 +7,11 @@
   "license": "ISC",
   "scripts": {
     "build": "rm -rf dist && npm run build-ts && npm run lint && npm run copy-static-assets",
-    "compile": "tsc && npm run copy-static-assets",
+    "compile": "npm run build-ts && npm run copy-static-assets",
     "build-ts": "tsc",
     "copy-static-assets": "ts-node copyStaticAssets.ts",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
-    "start": "node dist/server.js",
+    "start": "npm run build && node dist/server.js",
     "dev": "nodemon .",
     "clean": "rm -rf node_modules && rm -rf dist",
     "test": "jest --forceExit --coverage --verbose"
