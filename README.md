@@ -77,8 +77,8 @@ Config could be seen as a place to put the env variables needed by the applicati
 ## Utility
 Utility / Shared function for the whole project and can be used for many usecase.
 
-## Cron Jobs
-Cron job directory is placed in `src/public/scripts`. This project give 2 example of jobs :
+## Scripts
+Scripts directory is placed in `src/public/scripts`. This project give 2 example of scripts :
 - `populate_mongo.js` : Populate db using mongo db
 - `populate_postgres.js` : Populate db for postgresql
 
