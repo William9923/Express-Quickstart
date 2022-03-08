@@ -8,7 +8,6 @@
 <p align="center">A starter template for express (typescript) so I don't need to create boilerplate code for every project :D</b></p>
 
 ## Desc 📙
----
 A simple library application that can show books detail and genre.
 
 The main purpose of this repository is to show a small working Express.js API application + simple frontend (sorry this is not the main focus :D). 
